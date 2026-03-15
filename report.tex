@@ -1,0 +1,124 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PhD Thesis Main File
+% Author: Humphrey Curtis
+% Version: 1.0
+%
+% License:
+% Unless otherwise stated, this work is licensed under
+% Creative Commons Attribution 4.0 International (CC BY 4.0).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt, twoside, a4paper]{report}
+
+% ----------------------------------------------------------
+% Page layout
+% ----------------------------------------------------------
+\usepackage[margin=1in]{geometry}
+
+% Custom package imports
+\input{packages}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ==========================================================
+% Cover Page
+% ==========================================================
+
+\thispagestyle{empty}
+
+\begin{center}
+\begin{center}
+    
+\includegraphics[scale=0.4]{unibaslogo.png}
+\end{center}
+{\large University of Basel}
+
+\vspace*{1in}
+
+{\huge \textbf{Compiling Numeric Planning\\ to Classical Planning }}\\[0.2in]
+\vspace{1in}
+{\Large \textbf{Eda Erkek}}\\[0.2in]
+{\Large Supervisors: Florian Pommerening}\\
+{\Large \& Gustavo Delazeri}\\[0.2in]
+
+Department of Mathematics and Informatics\\[0.2in]
+Bachelor Thesis\\
+
+\today
+\end{center}
+
+\pagenumbering{arabic}
+
+% ==========================================================
+% Front Matter
+% ==========================================================
+
+\clearpage
+
+\phantomsection
+\addcontentsline{toc}{part}{Abstract}
+\include{FrontMatter/abstract}
+
+\phantomsection
+\addcontentsline{toc}{part}{Acknowledgements}
+\include{FrontMatter/acknowledgements}
+
+%==========================================================
+% Page Style (Headers & Footers)
+% ==========================================================
+
+\fancyhf{}
+\pagestyle{fancy}
+\setlength{\headheight}{15pt}
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancyhead[L]{\nouppercase\leftmark}
+\fancyfoot[C]{\thepage}
+
+
+% ==========================================================
+% Table of Contents & Lists
+% ==========================================================
+
+\tableofcontents
+\clearpage
+
+\pagenumbering{arabic}
+\fancyhead[R]{\textit{\nouppercase\rightmark}}
+
+% ==========================================================
+% Main Thesis Content
+% ==========================================================
+
+
+\include{Chapters/Introduction}
+\include{Chapters/chapter-2/Background}
+\include{Chapters/chapter-3/Methodology}
+\include{Chapters/chapter-4/Results}
+\include{Chapters/chapter-5/Conclusion}
+
+% ==========================================================
+% Bibliography
+% ==========================================================
+
+\clearpage
+\addcontentsline{toc}{part}{Bibliography}
+
+\renewcommand{\bibname}{Bibliography}
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+% ==========================================================
+% Appendices
+% ==========================================================
+
+\appendix
+
+\include{Appendices/appendix-1}
+\include{Appendices/appendix-2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
